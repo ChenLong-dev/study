@@ -319,4 +319,8 @@ r.GET("/swagger/*any", gs.WrapHandler(swaggerFiles.Handler))
 http://localhost:8000/swagger/index.html
 ```
 
-文档：https://golang-tech-stack.com/tutorial/topic/golang-swagger
+## 文档
+
+```bash
+https://golang-tech-stack.com/tutorial/topic/golang-swagger
+```
