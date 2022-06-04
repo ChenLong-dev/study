@@ -1,17 +1,15 @@
 package main
 
-
 import (
 	"github.com/gin-gonic/gin"
 	gs "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
-	"gorm.io/gorm"
-	"gorm.io/gorm/logger"
+	_ "golang_tech_stack/swagger/docs"
 	"golang_tech_stack/swagger/src"
 )
 
 //making an instance of the type DB from the gorm package
-var db *gorm.DB = nil
+//var db *gorm.DB = nil
 var err error
 
 // @title gin+gorm crud 测试swagger（必填）
@@ -23,26 +21,23 @@ var err error
 // @host localhost:8000
 // @BasePath /
 func main() {
-	//establishing connection with mysql database 'CRUD'
-	dsn := "root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
-		Logger: logger.Default.LogMode(logger.Silent),
-	})
+	////establishing connection with mysql database 'CRUD'
+	//dsn := "root:123456@tcp(127.0.0.1:3306)/test_db?charset=utf8mb4&parseTime=True&loc=Local"
+	//db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
+	//	Logger: logger.Default.LogMode(logger.Silent),
+	//})
 	//handle the error comes from the connection with DB
-	if err != nil {
-		panic(err.Error())
-	}
-
-	db.AutoMigrate(&Post{})
-
+	//if err != nil {
+	//	panic(err.Error())
+	//}
 	server := gin.Default()
 
 	//set up the different routes
-	server.GET("/posts", Posts)
-	server.GET("/posts/:id", Show)
-	server.POST("/posts", Store)
-	server.PATCH("/posts/:id", Update)
-	server.DELETE("/posts/:id", Delete)
+	server.GET("/posts", src.Posts)
+	server.GET("/posts/:id", src.Show)
+	server.POST("/posts", src.Store)
+	server.PATCH("/posts/:id", src.Update)
+	server.DELETE("/posts/:id", src.Delete)
 
 	server.GET("/swagger/*any", gs.WrapHandler(swaggerFiles.Handler))
 
