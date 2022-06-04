@@ -4,8 +4,8 @@ import (
 	"github.com/gin-gonic/gin"
 	gs "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
-	src2 "golang_tech_stack/special/swagger/src"
-	_ "golang_tech_stack/swagger/docs"
+	_ "special/swagger/docs"
+	src "special/swagger/src"
 )
 
 //making an instance of the type DB from the gorm package
@@ -33,11 +33,11 @@ func main() {
 	server := gin.Default()
 
 	//set up the different routes
-	server.GET("/posts", src2.Posts)
-	server.GET("/posts/:id", src2.Show)
-	server.POST("/posts", src2.Store)
-	server.PATCH("/posts/:id", src2.Update)
-	server.DELETE("/posts/:id", src2.Delete)
+	server.GET("/posts", src.Posts)
+	server.GET("/posts/:id", src.Show)
+	server.POST("/posts", src.Store)
+	server.PATCH("/posts/:id", src.Update)
+	server.DELETE("/posts/:id", src.Delete)
 
 	server.GET("/swagger/*any", gs.WrapHandler(swaggerFiles.Handler))
 
