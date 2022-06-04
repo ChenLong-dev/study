@@ -5,6 +5,7 @@
 ### 本课程预备知识
 
 ---
+
 - gin
 - gorm
 - mysql
@@ -12,6 +13,7 @@
 ### 添加库
 
 ---
+
 ```bigquery
 go get -u github.com/swaggo/swag/cmd/swag
 go get github.com/gin-gonic/gin
@@ -25,7 +27,9 @@ go get github.com/swaggo/gin-swagger/swaggerFiles
 ### gin+gorm创建一个crud项目
 
 ---
+
 #### model.go
+
 ```bigquery
 package main
 
@@ -48,6 +52,7 @@ type Response struct {
 ```
 
 #### api.go
+
 ```bigquery
 package main
 

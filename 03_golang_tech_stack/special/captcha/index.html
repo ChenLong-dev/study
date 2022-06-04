@@ -1,0 +1,31 @@
+<!--
+ * @Author: ChenLong longchen2008@126.com
+ * @Date: 2022-06-04 23:08:41
+ * @LastEditors: ChenLong longchen2008@126.com
+ * @LastEditTime: 2022-06-04 23:09:02
+ * @FilePath: \study\03_golang_tech_stack\special\captcha\index.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Golang 技术栈精品课(golang-tech-stack.com)验证码</title>
+</head>
+<body>
+
+
+<h1>Golang 技术栈精品课(golang-tech-stack.com)</h1>
+
+<form action="/captcha/verify/" method="post">
+
+    User: <input type="text"> <br>
+    Pwd: <input type="password"> <br>
+    Captcha：<input type="text" name="code"> 
+
+    <img src="/captcha" onclick="this.src='/captcha?v='+Math.random()">
+
+    <input type="submit">
+</form>
+</body>
+</html>
