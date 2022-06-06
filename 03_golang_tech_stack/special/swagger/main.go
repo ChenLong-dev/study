@@ -32,7 +32,7 @@ func main() {
 	//}
 	server := gin.Default()
 
-	//set up the different routes
+	//set up the different routes 
 	server.GET("/posts", src.Posts)
 	server.GET("/posts/:id", src.Show)
 	server.POST("/posts", src.Store)
