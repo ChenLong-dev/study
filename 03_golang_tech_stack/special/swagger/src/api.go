@@ -7,6 +7,7 @@ import (
 	"strconv"
 )
 
+// Posts
 //查询
 func Posts(c *gin.Context) {
 	limit, _ := strconv.Atoi(c.DefaultQuery("limit", "10"))
@@ -22,6 +23,7 @@ func Posts(c *gin.Context) {
 
 }
 
+// Show
 // @Summary      查询
 // @Description  查询
 // @Tags         posts
@@ -41,6 +43,7 @@ func Show(c *gin.Context) {
 	})
 }
 
+// Store
 // @Summary      添加post
 // @Description  添加post
 // @Tags         posts

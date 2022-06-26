@@ -4,8 +4,9 @@ import (
 	"github.com/gin-gonic/gin"
 	gs "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
-	_ "special/swagger/docs"
-	src "special/swagger/src"
+	_ "golang_tech_stack/swagger/docs"
+	src "golang_tech_stack/swagger/src"
+
 )
 
 //making an instance of the type DB from the gorm package
